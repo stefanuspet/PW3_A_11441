@@ -42,6 +42,3 @@ if (isset($_POST["mencoba_login"])) {
     ];
     header("Location: ./dashboard.php");
 }
-
-
-?>

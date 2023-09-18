@@ -63,15 +63,13 @@ $gambar = [
             <div class="carousel-indicators">
                 <?php foreach ($gambar as $i => $gbr) { ?>
 
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="<?php echo $i; ?>"
-                        class="<?php echo $i === 0 ? "active" : ""; ?>" aria-label="Slide <?php echo $i + 1; ?>"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="<?php echo $i; ?>" class="<?php echo $i === 0 ? "active" : ""; ?>" aria-label="Slide <?php echo $i + 1; ?>"></button>
                 <?php } ?>
             </div>
             <div class="carousel-inner">
                 <?php foreach ($gambar as $i => $gbr) { ?>
                     <div class="carousel-item <?php echo $i === 0 ? "active" : ""; ?>">
-                        <img src="<?php echo $gbr; ?>" class="carousel-img" role="img"
-                            aria-label="Gambar ke-<?php echo ($i + 1); ?>" focusable="false" />
+                        <img src="<?php echo $gbr; ?>" class="carousel-img" role="img" aria-label="Gambar ke-<?php echo ($i + 1); ?>" focusable="false" />
                     </div>
                 <?php } ?>
             </div>
@@ -97,9 +95,7 @@ $gambar = [
                     <p class="lead">Nomor Pokok Mahasiswa: <strong>[210711441]</strong>.</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="./assets/images/featurette-1.webp"
-                        class="featurette-image img-fluid mx-auto rounded shadow" role="img"
-                        aria-label="Gambar featurette 1" focusable="false" />
+                    <img src="./assets/images/featurette-1.webp" class="featurette-image img-fluid mx-auto rounded shadow" role="img" aria-label="Gambar featurette 1" focusable="false" />
                 </div>
             </div>
 
@@ -116,9 +112,7 @@ $gambar = [
                     </p>
                 </div>
                 <div class="col-md-5 order-md-1">
-                    <img src="./assets/images/featurette-2.jpeg"
-                        class="featurette-image img-fluid mx-auto rounded shadow" role="img"
-                        aria-label="Gambar featurette 2" focusable="false" />
+                    <img src="./assets/images/featurette-2.jpeg" class="featurette-image img-fluid mx-auto rounded shadow" role="img" aria-label="Gambar featurette 2" focusable="false" />
                 </div>
             </div>
         </div>

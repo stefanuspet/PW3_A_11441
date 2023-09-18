@@ -74,7 +74,7 @@ $detail = [
             </div>
 
             <?php if (isset($_SESSION["error"])) { ?>
-                <div class="alert alert-danger mb-4" role="alert">
+                <div class="alert alert-danger mb-4 text-center" role="alert">
                     <strong>Error!</strong> <?php echo $_SESSION["error"]; ?>
                 </div>
             <?php
