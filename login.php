@@ -49,7 +49,7 @@ $detail = [
                 <img src="<?php echo $detail["logo"]; ?>" class="crown-logo">
                 <div>
                     <p class="mb-0 fs-5 fw-bold"><?php echo $detail["name"]; ?></p>
-                    <p class="small mb-0"><?php echo $detail["tagline"] ?></p>
+                    <p class="small mb-0"><?php echo $detail["tagline"]; ?></p>
                 </div>
             </a>
             <ul class="nav nav-pills">
@@ -64,9 +64,9 @@ $detail = [
     </header>
     <main style="padding-top: 84px;" class="container">
         <h1 class="text-center mt-5 display-4">Welcome Admin!</h1>
-        <p class="text-center mt-5 display-4">Untuk memastikan identitas, silahkan isi form berikut:</p>
+        <p class="text-center lead">Untuk memastikan identitas, silahkan isi form berikut:</p>
 
-        <hr class="featurette-divider"/>
+        <hr class="featurette-divider" />
 
         <form action="./processLogin.php" method="POST" id="formAuth" enctype="multipart/form-data">
             <div class="alert alert-info mb-4 text-center" role="alert">
@@ -77,24 +77,24 @@ $detail = [
                 <div class="alert alert-danger mb-4" role="alert">
                     <strong>Error!</strong> <?php echo $_SESSION["error"]; ?>
                 </div>
-            <?php 
+            <?php
                 unset($_SESSION["error"]);
             } ?>
 
             <div class="form-floating mb-4">
-                <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Username" required>
+                <input type="text" class="form-control" id="inputUsername" name="username" placeholder="Username">
                 <label for="inputUsername">Username</label>
             </div>
             <div class="form-floating mb-4">
-                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
+                <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
                 <label for="inputPassword">Password</label>
             </div>
             <div class="mb-4">
                 <label for="inputFile" class="form-label d-block text-center">Bukti sedang ngantor:</label>
                 <input type="file" class="form-control" id="inputFile" accept=".jpg,.jpeg,.png" name="bukti_ngantor">
             </div>
-            <div>
-                <button type="submit" class="btn btn-primary">Login</button>
+            <div class="mb-4">
+                <button type="submit" class="btn btn-primary w-100 fw-bold">Login</button>
                 <input type="hidden" name="mencoba_login" value="1">
             </div>
         </form>
