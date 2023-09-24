@@ -13,6 +13,10 @@ $detail = [
     "logo" => "./assets/images/crown.png"
 ];
 
+if (!isset($_SESSION["Rooms"])) {
+    $_SESSION["Rooms"] = [];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -79,9 +83,44 @@ $detail = [
                 </div>
             </div>
         </div>
+        <div style="padding-top: 5px;">
+            <h1 class="mt-5 mb-3 border-bottom fw-bold">Daftar Kamar</h1>
+            <p class="mb-0">Grand Atma saat ini memiliki <strong><?php echo count($_SESSION["Rooms"]) ?></strong> jenis kamar yang eksotis </p>
+            <button onclick="document.location.href='./addKamar.php'" type="button" name="addKamar" class="btn btn-success">
+                <svg width="15px" height="15px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.00024000000000000003">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M11 8C11 7.44772 11.4477 7 12 7C12.5523 7 13 7.44771 13 8V11H16C16.5523 11 17 11.4477 17 12C17 12.5523 16.5523 13 16 13H13V16C13 16.5523 12.5523 17 12 17C11.4477 17 11 16.5523 11 16V13H8C7.44772 13 7 12.5523 7 12C7 11.4477 7.44771 11 8 11H11V8Z" fill="#ffffff"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M23 4C23 2.34315 21.6569 1 20 1H4C2.34315 1 1 2.34315 1 4V20C1 21.6569 2.34315 23 4 23H20C21.6569 23 23 21.6569 23 20V4ZM21 4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4Z" fill="#ffffff"></path>
+                    </g>
+                </svg>
+                Tambah Kamar
+            </button>
+        </div>
+        <form action="./processDeleteKamar.php" method="POST">
+            <?php foreach ($_SESSION["Rooms"] as $key => $room) : ?>
+                <div style="padding-top: 20px; padding-bottom: 20px;">
+                    <div style="width: 100%; padding: 20px; background-color: ghostwhite; border-radius: 10px; border: solid; border-color: gray;">
+                        <div class="d-flex gap-3">
+                            <img src="./assets/images/featurette-2.jpeg" class="card-img-top" alt="fotoKamar" style="width: 250px; border-radius: 10px;">
+                            <div style="width: 100%;">
+                                <h4><?php echo $room['namaKamar'] ?></h4>
+                                <p><?php echo $room['Deskripsi'] ?></p>
+                                <hr>
+                                <div class="d-flex gap-2">
+                                    <p>Tipe kamar : <strong><?php echo $room['tipeKamar'] ?></strong></p>
+                                    <p>Base price : <strong><?php echo $room['hargaKamar'] ?></strong></p>
+                                </div>
+                                <button class="btn btn-danger" type="submit" name="delete" value="<?php echo $key ?>">Hapus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </form>
     </main>
     <script src="./assets/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
